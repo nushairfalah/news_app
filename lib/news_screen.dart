@@ -5,12 +5,14 @@ import 'package:intl/intl.dart';
 import 'dart:async';
 import 'dart:io';
 import 'package:news_app/model/NewsResponse.dart';
-import 'package:news_app/model/detail_screen.dart';
+import 'package:news_app/detail_screen.dart';
 
 import 'helper.dart';
 
 class NewsScreen extends StatefulWidget {
-  const NewsScreen({super.key});
+
+  final String category;
+  const NewsScreen({super.key, this.category = 'technology'});
 
   @override
   State<NewsScreen> createState() => _NewsScreenState();
@@ -29,7 +31,7 @@ class _NewsScreenState extends State<NewsScreen> {
 
   Future<List<Articles>?> getNews() async {
     String country = "us";
-    String category = "sports";
+    String category = widget.category;
     String apiKey = "6259472dcef04116b2387b9e17d224b9";
     String url =
         "https://newsapi.org/v2/top-headlines?country=$country&category=$category&apiKey=$apiKey";

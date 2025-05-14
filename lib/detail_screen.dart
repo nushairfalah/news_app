@@ -1,9 +1,8 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:news_app/model/NewsResponse.dart';
 import 'package:news_app/webview_screen.dart';
 
-import '../helper.dart';
+import 'helper.dart';
 
 class DetailScreen extends StatelessWidget {
 
